@@ -1,45 +1,37 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MainCurrency from './src/components/component5/MainCurrnecy';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+// import Blog_1 from './src/app/1_Blog';
+// import Schema from './src/app/2_SchemaValidation';
+// import SchemaValidation from './src/components/component2/schema-Validation';
+// import BgChanger from './src/components/component3/bgchanger';
+// import RollTheDice from './src/components/component4/RollTheDice';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <>
+      <SafeAreaView>
+        <ScrollView>
+          {/* 1. Simple Blog UI */}
+          {/* <Blog_1/> */}
+
+          {/* 2. Schema Validation */}
+          {/* <SchemaValidation /> */}
+        </ScrollView>
+
+        {/* 5. Currency Converter */}
+
+      </SafeAreaView>
+        <MainCurrency />
+
+      {/* 4. Roll The Dice */}
+      {/* <RollTheDice /> */}
+      {/* 3. Background Color Changer */}
+      {/* <BgChanger /> */}
+    </>
   );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
